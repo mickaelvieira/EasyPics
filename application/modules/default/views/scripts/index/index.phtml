@@ -1,0 +1,25 @@
+
+<section id="home-content"></section>
+
+<section id="grid-content"></section>
+
+<section id="search-content"></section>
+
+<?php
+echo $this->partial('index/forms/edit-picture.phtml', array());
+echo $this->partial('index/forms/edit-album.phtml', array(
+    'twitter_enable' => $this->twitter_enable,
+    'facebook_enable' => $this->facebook_enable
+
+));
+
+echo $this->partial('index/forms/add-album.phtml', array());
+echo $this->partial('index/forms/search.phtml', array(
+    'searchConfig' => $this->searchConfig,
+    'photoConfig' => $this->photoConfig
+));
+?>
+
+<div id="form-add-container"></div>
+
+

@@ -1,0 +1,124 @@
+<div id="view-form-search">
+
+    <div id="btn-close">
+        <a href="javascript:;">
+            <span class="icon-remove"></span>
+        </a>
+    </div>
+
+    <h2>Advanced Search</h2>
+
+    <div id="elements-container">
+
+        <div id="form-search-container">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/html" id="form_search_tmpl">
+
+<form id="form-search" name="form_search" method="post" action="/search/search/" enctype="application/x-www-form-urlencoded">
+
+    <div class="clearfix element-container">
+        <label for="">Albums</label>
+        <select name="search_in" id="search-in">
+            <option>Tous les albums</option>
+        </select>
+    </div>
+
+    <div class="clearfix element-container">
+    <label>Couleurs</label>
+    <select name="color" id="color">
+        <option value="0">Couleurs/Noir et blanc</option>
+        <option value="1">Couleurs</option>
+        <option value="2">Noir et blanc</option>
+    </select>
+    </div>
+
+    <div class="clearfix element-container">
+        <label>Mots clés</label>
+        <input type="text" name="terms" id="terms">
+    </div>
+
+    <div class="clearfix element-container">
+    <label for="exp-mode">Exposure Mode</label>
+    <select name="exp_mode" id="exp-mode">
+        <option value="-">Choose</option>
+        <?php foreach ($this->photoConfig['exposure.mode'] as $key => $value) { ?>
+            <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+        <?php } ?>
+    </select>
+    </div>
+
+
+    <div class="clearfix element-container">
+    <label for="exp-prog">Exposure Program</label>
+    <select name="exp_prog" id="exp-prog">
+        <option value="-">Choose</option>
+        <?php foreach ($this->photoConfig['exposure.program'] as $key => $value) { ?>
+            <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+        <?php } ?>
+    </select>
+    </div>
+
+    <div class="clearfix element-container">
+    <label for="whitebalance">White Balance</label>
+    <select name="whitebalance" id="whitebalance">
+        <option value="-">Choose</option>
+        <?php foreach ($this->photoConfig['whitebalance'] as $key => $value) { ?>
+            <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+        <?php } ?>
+    </select>
+    </div>
+
+    <div class="clearfix element-container">
+    <label for="lightsource">Light source</label>
+    <select name="lightsource" id="lightsource">
+        <option value="-">Choose</option>
+        <?php foreach ($this->photoConfig['lightsources'] as $key => $value) { ?>
+            <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+        <?php } ?>
+    </select>
+    </div>
+    <!--
+    <div class="clearfix element-container">
+    <label>Exposure</label>
+    <input type="range" value="1000" name="exp_min" id="exp-min" min="<?php echo $this->searchConfig['min_exp_time']; ?>" max="<?php echo $this->searchConfig['max_exp_time']; ?>" class="tiny-field">
+    <input type="range" value="1" name="exp_max" id="exp-max" class="tiny-field">
+    </div>
+
+    <div class="clearfix element-container">
+    <label>Aperture</label>
+    <input type="range" value="7.1" name="aper_min" id="aper-min" min="<?php echo $this->searchConfig['min_aper']; ?>" max="<?php echo $this->searchConfig['max_aper']; ?>" class="tiny-field">
+    <input type="range" value="22" name="aper_max" id="aper-max" class="tiny-field">
+    </div>
+
+    <div class="clearfix element-container">
+    <label>ISO</label>
+    <input type="range" name="iso_min" id="iso-min" min="<?php echo $this->searchConfig['min_iso']; ?>" max="<?php echo $this->searchConfig['max_iso']; ?>" value="0" class="tiny-field">
+    <input type="range" name="iso_max" id="iso-max" value="400"class="tiny-field">
+    </div>
+    -->
+    <div class="clearfix element-container">
+    <label>Date</label>
+    <input type="datetime" name="date_start" id="iso-min" class="tiny-field">
+    <input type="datetime" name="date_end" id="date-end" class="tiny-field">
+    </div>
+
+    <div class="clearfix element-container">
+    <a href="javascript:;" id="btn-search" class="btn" >
+        <span class="icon-search"></span>&nbsp;Search
+    </a>
+    </div>
+</form>
+
+</script>
+<script type="text/html" id="form_search_album_list_tmpl">
+    <option value="">All</option>
+    <% for (var i = 0; i < list.length; i++ ) { %>
+        <option value="<%=list[i].id%>"><%=list[i].name%></option>
+    <% } %>
+</script>

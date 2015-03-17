@@ -1,0 +1,23 @@
+<nav id="account" class="btn-group">
+    <a href="javascript:;" class="btn btn-user">
+        <i class="icon-user"></i>
+        <?php echo $this->firstname . ' ' . $this->lastname; ?>
+    </a>
+    <a href="javascript:;" class="btn btn-toggle">
+        <i class="icon-chevron-down"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-account">
+        <li>
+            <a href="<?php echo $this->baseUrl('#'); ?>" id="btn-home" class="icon-home">&nbsp;Home</a>
+        </li>
+        <li>
+            <a href="javascript:;" id="btn-search" class="icon-search">&nbsp;Search</a>
+        </li>
+        <li>
+            <a href="<?php echo $this->baseUrl('settings/'); ?>" id="btn-settings" class="icon-cogs">&nbsp;Settings</a>
+        </li>
+        <li>
+            <a href="<?php echo $this->baseUrl('/logout/'); ?>" id="btn-logout" class="icon-off">&nbsp;Logout</a>
+        </li>
+    </ul>
+</nav>

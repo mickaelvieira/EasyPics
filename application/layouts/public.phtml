@@ -1,0 +1,32 @@
+<?php
+    echo $this->doctype();
+    echo $this->Locale()->render();
+?>
+<head>
+<?php
+    echo $this->Meta()->render();
+    echo $this->Stylesheet()->render();
+    echo $this->Modernizr()->render();
+?>
+</head>
+<body class="public"> 
+<?php
+    echo $this->layout()->content;
+?>
+
+<div id="overlay"></div>
+<div id="loader-overlay">
+    <div id="loader"></div>
+</div>
+<?php
+    echo $this->Javascript()->render();
+?>
+<script type="text/javascript">
+EasyPics.config.base = '<?php echo $this->baseUrl(''); ?>';
+EasyPics.config.js_version = '<?php echo JS_VERSION ?>';
+EasyPics.config.router = 'Public';
+EasyPics.config.module = '<?php echo (!is_null($this->user)) ? "api" : "gallery"; ?>';
+EasyPics.init();
+</script>
+</body>
+</html>

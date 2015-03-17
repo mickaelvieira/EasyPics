@@ -1,0 +1,111 @@
+<script type="text/html" id="album_item_container_tmpl">
+    <div id="albums-grid-container-<%=grid%>" class="container_12 clearfix albums-grid-container">
+</script>
+
+<script type="text/html" id="album_item_tmpl">
+
+    <a class="btn-select-album" href="javascript:;" title="<%=name%>"></a>
+
+    <div class="album-item-infos">
+
+        <div class="album-item-title"><%=name%>&nbsp;</div>
+        <div class="album-privacy clearfix" >
+            <a href="javascript:;" class="btn-private-album">
+                <span class="icon-lock"></span>
+            </a>
+            <a href="javascript:;" class="btn-public-album">
+                <span class="icon-eye-open"></span>
+            </a>
+        </div>
+
+        <div class="album-item-total-picture"><%=total_pictures%> pictures</div>
+        <a href="javascript:;" data-album-id="<%=id%>" class="btn-delete-album">
+            <i class="icon-trash"></i>
+        </a>
+    </div>
+</script>
+
+<script type="text/html" id="picture_item_container_tmpl">
+    <div id="albums-grid-container-<%=grid%>" class="container_6 clearfix pictures-grid-container">
+</script>
+<script type="text/html" id="item_picture_tmpl">
+    <a class="btn-select-picture" id="btn-select-picture-<%=id%>" data-picture-id="<%=id%>" href="javascript:;" title="<%=title%>"></a>
+
+    <div class="picture-item-mask-infos">
+        <div class="btn-group picture-item-btn-group">
+            <div class="picture-item-title"><%=title%>&nbsp;</div>
+
+            <a href="javascript:;" data-album-id="<%=id%>" class="btn-delete-picture">
+                <i class="icon-trash"></i>
+            </a>
+            <a href="javascript:;" data-album-id="<%=id%>" class="btn-edit-picture">
+                <i class="icon-pencil"></i>
+            </a>
+            <a href="javascript:;" data-album-id="<%=id%>" class="btn-view-gallery">
+                <i class="icon-picture"></i>
+            </a>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="search_item_container_tmpl">
+    <div id="albums-grid-container-<%=grid%>" class="container_6 clearfix pictures-grid-container">
+</script>
+<script type="text/html" id="item_search_tmpl">
+    <a class="btn-select-picture" data-picture-id="<%=id%>" href="javascript:;" title="<%=title%>">
+        <img alt="<%=title%>" src="<%=source%>" class="picture-img">
+    </a>
+
+    <div class="picture-item-mask-infos">
+        <div class="btn-group picture-item-btn-group">
+            <div class="picture-item-title"><%=title%>&nbsp;</div>
+
+            <a href="javascript:;" data-album-id="<%=id%>" class="btn-delete-picture">
+                <i class="icon-trash"></i>
+            </a>
+            <a href="javascript:;" data-album-id="<%=id%>" class="btn-edit-picture">
+                <i class="icon-pencil"></i>
+            </a>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="download_tmpl">
+    <input type="button" value="Full Size" class="button">&nbsp;|&nbsp;<input type="button" value="Small Size" class="button">
+</script>
+
+<script type="text/html" id="tools_album_list_tmpl">
+<ul>	
+<% for (var i = 0; i < list.length; i++ ) { %>
+<li>
+    <a href="javascript:;" data-album-id="<%=list[i].id%>" class="btn-album-list"><%=list[i].name%></a>
+</li>
+<% } %>
+</ul>
+<div class='divider'></div>	
+<ul>
+    <li>
+        <a href='javascript:;' id="btn-new-album">New album...</a>
+    </li>
+    <li>
+        <a href='javascript:;' id="btn-process-copy">Apply</a>
+    </li>
+</ul>	
+</script>
+
+<script type="text/html" id="form_add_file_list_tmpl">
+    <ul id="filelist">
+        <% for (var i = 0; i < list.length; i++ ) { %>
+        <li>
+            <input type="checkbox" class="cb-import-file" name="import_files[]" id="<%=list[i].id%>" value="<%=list[i].path%>" >&nbsp;
+            <label for="<%=list[i].id%>"><%=list[i].basename%></label>
+        </li>
+        <% } %>
+    </ul>
+</script>
+<script type="text/html" id="form_add_album_list_tmpl">
+    <option value="">Choose</option>
+    <% for (var i = 0; i < list.length; i++ ) { %>
+        <option value="<%=list[i].id%>"><%=list[i].name%></option>
+    <% } %>
+</script>

@@ -1,0 +1,23 @@
+<?php
+    echo $this->doctype();
+    echo $this->Locale()->render();
+?>
+<head>
+<?php
+    echo $this->Meta()->render();
+    echo $this->Stylesheet()->render();
+?>
+</head>
+<body>
+<div class="container_16 error">
+    <div class="grid_4"></div>
+    <div class="grid_8">
+    <?php
+        echo $this->layout()->content;
+    ?>
+    </div>
+    <div class="grid_4"></div>
+</div>
+</body>
+</html>
+

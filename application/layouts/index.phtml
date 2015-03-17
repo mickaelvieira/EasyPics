@@ -1,0 +1,60 @@
+<?php
+    echo $this->doctype();
+    echo $this->Locale()->render();
+?>
+<head>
+<?php
+    echo $this->Meta()->render();
+    echo $this->Stylesheet()->render();
+    echo $this->Modernizr()->render();
+?>
+</head>
+<body >
+<?php
+    echo $this->Header("index/helpers/header.phtml")->render();
+?>
+
+<div id="message-view" >
+    <div id="icon-error">
+        <span class="icon-warning-sign"></span>
+    </div>
+    <div id="icon-info">
+        <span class="icon-info-sign"></span>
+    </div>
+
+    <div id="message-container" class="">Mon message Lorem Ipsum dolor</div>
+    <div id="message-close" ><a href="javascript:;">x</a></div>
+</div>
+
+<div id="chosen">
+    <div id="chosen-message-container">Êtes vous sûr de vouloir supprimer ?</div>
+    <div id="chosen-buttons-container">
+        <a href="javascript:;" id="chosen-button-left" class="btn">OK</a>
+        <a href="javascript:;" id="chosen-button-right" class="btn">No thanks</a>
+    </div>
+</div>
+
+<?php
+    echo $this->layout()->content;
+?>
+<?php
+    echo $this->partial('index/helpers/templates.phtml', array());
+?>
+
+<div id="overlay"></div>
+<div id="loader-overlay">
+    <div id="loader"></div>
+</div>
+
+<?php
+    echo $this->Javascript()->render();
+?>
+<script type="text/javascript">
+EasyPics.config.base = '<?php echo $this->baseUrl(''); ?>';
+EasyPics.config.js_version = '<?php echo JS_VERSION ?>';
+EasyPics.config.router = 'Private';
+EasyPics.config.module = 'api';
+EasyPics.init();
+</script>
+</body>
+</html>

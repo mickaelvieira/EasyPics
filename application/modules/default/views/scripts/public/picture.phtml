@@ -1,0 +1,10 @@
+<?php
+//Zend_Debug::dump($this->picture);
+if (isset($this->picture)) {
+    ?>
+    <a href="<?php echo $this->baseUrl("p/".$this->picture->key_url) ?>">
+        <img src="<?php echo $this->baseUrl("image/full/".$this->picture->key_url) ?>" width="<?php echo $this->picture->optimized_width; ?>px" height="<?php echo $this->picture->optimized_height; ?>px" alt="<?php echo $this->picture->title; ?>">
+    </a>
+    <?php
+}
+?>

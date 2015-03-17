@@ -1,0 +1,38 @@
+<header id="header" >
+    <div class="container_12 clearfix">
+        <div class="grid_3">
+            <h1 class="clearfix" id="logo">
+                <a href="<?php echo $this->baseUrl(''); ?>" id="link-logo"><?php echo $this->title; ?></a>
+            </h1>
+        </div>
+
+        <div class="grid_9">
+
+            <?php echo $this->Account()->render(); ?>
+
+            <nav id="adder" class="btn-group">
+                <a href="javascript:;" class="btn btn-add-picture" id="add-picture-button" >
+                    <i class="icon-upload-alt"></i>
+                    &nbsp;Add Pictures
+                </a>
+            </nav>
+            <nav id="displayer" class="btn-group">
+                <a href="javascript:;" class="btn btn-add-picture" id="btn-display-gallery" >
+                    <i class="icon-picture"></i>
+                </a>
+            </nav>
+
+            <nav id="tools" class="btn-group">
+                <a href="javascript:;" class="btn" id="move-picture-button" >
+                    <i class="icon-folder-close"></i>
+                    Move...
+                </a>
+                <a href="javascript:;" class="btn" id="copy-picture-button" >
+                    <i class="icon-file"></i>
+                    Copy...
+                </a>
+                <div id="copy-picture-albums-list" class="dropdown-menu dropdown-menu-tools"></div>
+            </nav>
+        </div>
+    </div>
+</header>

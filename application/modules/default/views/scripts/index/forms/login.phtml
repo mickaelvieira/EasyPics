@@ -1,0 +1,12 @@
+<form id="<?php echo $this->element->getAttrib('id'); ?>" name="<?php echo $this->element->getName(); ?>" action="<?php echo $this->element->getAction(); ?>" method="<?php echo $this->element->getMethod(); ?>" enctype="<?php echo $this->element->getEnctype(); ?>">
+    <div class="element-container clearfix">
+        <span class="icon-prepend"><i class="icon-user"></i></span>
+        <?php echo $this->element->login; ?>
+    </div>
+
+    <div class="element-container clearfix">
+        <span class="icon-prepend"><i class="icon-key"></i></span>
+        <?php echo $this->element->password; ?>
+    </div>
+    <?php echo $this->element->submit; ?>
+</form>

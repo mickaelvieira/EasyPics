@@ -1,0 +1,19 @@
+<?php
+    echo $this->doctype();
+    echo $this->Locale()->render();
+?>
+<head>
+<?php
+    echo $this->Meta()->render();
+    echo $this->Stylesheet()->render();
+?>
+</head>
+<body class="login">
+
+
+<?php
+    echo $this->layout()->content;
+?>
+</body>
+</html>
+

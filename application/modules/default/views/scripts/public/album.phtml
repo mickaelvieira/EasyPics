@@ -1,0 +1,13 @@
+<?php
+//Zend_Debug::dump($this->pictures);
+
+if (isset($this->pictures)) {
+    foreach ($this->pictures as $k => $picture) {
+        ?>
+        <a href="<?php echo $this->baseUrl("p/".$picture['key_url']) ?>">
+            <img src="<?php echo $this->baseUrl("image/grid/".$picture['key_url']) ?>" width="200px" height="200px" alt="<?php echo $picture['title']; ?>">
+        </a>
+        <?php
+    }
+}
+?>

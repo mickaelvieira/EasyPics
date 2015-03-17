@@ -1,0 +1,118 @@
+<div id="btn-close">
+    <a href="javascript:;">
+        <span class="icon-remove"></span>
+    </a>
+</div>
+
+<h2>Add Pictures</h2>
+
+<div class="panels">
+    <nav class="panels-selector clearfix">
+    <ul >
+        <li class="active" id="form-upload-button">
+            <a href="javascript:;" id="form-upload-button-link">Upload</a>
+            <div class="arrow-down"></div>
+        </li>
+        <li id="form-import-button">
+            <a href="javascript:;" id="form-import-button-link">Import</a>
+            <div class="arrow-down"></div>
+        </li>
+        <li id="">
+            <span class="panel-title active" id="panel-title-upload">Upload your picture</span>
+            <span class="panel-title" id="panel-title-import">Import your picture</span>
+        </li>
+    </ul>
+    </nav>
+    <div class="panel-add-form active" id="form-upload-panel">
+
+        <iframe id="form-add-iframe" name="form_add_iframe"></iframe>
+
+        <form target="form_add_iframe" method="post" action="<?php echo $this->baseUrl('action/upload/'); ?>" enctype="multipart/form-data" name="form_upload" id="form-upload">
+            <div class="clearfix element-container" id="upload-album-type">
+                <label for="upload_album_type-0">
+                <input type="radio" value="0" id="upload_album_type-0" name="upload_album_type" checked="checked">Album existant</label>
+
+                <label for="upload_album_type-1">
+                <input type="radio" value="1" id="upload_album_type-1" name="upload_album_type">Nouvel album</label>
+            </div>
+
+            <div class="clearfix element-container" id="upload-album-id-container">
+                <label class="required" for="upload_album_id">Choisissez un album</label>
+                <select id="upload_album_id" name="upload_album_id"></select>
+            </div>
+
+            <div class="clearfix element-container" id="upload-album-name-container">
+                <label class="required" for="upload_album_name">Nom de l'album</label>
+                <input type="text" value="" id="upload_album_name" name="upload_album_name">
+            </div>
+
+            <div class="clearfix element-container upload-element-container">
+                <label class="required" for="upload-file-1">Fichier</label>
+                <input type="hidden" id="MAX_FILE_SIZE_1" value="10000000" name="MAX_FILE_SIZE_1">
+                <input type="file" id="upload-file-1" name="upload_file_1">
+            </div>
+
+            <div id="form-upload-fields-list"></div>
+
+            <div class="clearfix element-container">
+                <input type="submit" class="btn" value="Upload" id="form-upload-submit-button" name="form_upload_submit_button">
+                &nbsp;&nbsp;
+                <a href="javascript:;" id="btn-add-upload-field">
+                    <span class="icon-plus-sign"></span>&nbsp;add an upload field
+                </a>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="panel-add-form" id="form-import-panel">
+
+        <div id="container-reload-file-list" class="clearfix element-container">
+
+        <a href="javascript:;" id="btn-reload-file-list" >
+            <span class="icon-refresh"></span>&nbsp;Reload File list
+        </a>
+
+
+        </div>
+        <div id="import-album-file-list" class="clearfix element-container">Loading...</div>
+
+        <form method="post" action="#" enctype="application/x-www-form-urlencoded" name="form_import" id="form-import">
+
+            <div class="clearfix element-container" id="import-album-type">
+                <label for="import_album_type-0">
+                <input type="radio" value="0" id="import_album_type-0" name="import_album_type" checked="checked">Album existant</label>
+
+                <label for="import_album_type-1">
+                <input type="radio" value="1" id="import_album_type-1" name="import_album_type">Nouvel album</label>
+            </div>
+
+            <div class="clearfix element-container" id="import-album-id-container">
+                <label class="required" for="import_album_id">Choisissez un album</label>
+                <select id="import_album_id" name="import_album_id"></select>
+            </div>
+
+            <div class="clearfix element-container" id="import-album-name-container">
+                <label class="required" for="import_album_name">Nom de l'album</label>
+                <input type="text" value="" id="import_album_name" name="import_album_name">
+            </div>
+
+            <div class="clearfix element-container form-import-btn-group">
+                <input type="submit" class="btn" value="Import" id="form-import-submit-button" name="form_import_submit_button">
+                &nbsp;&nbsp;
+                <input type="checkbox" name="delete_after_import" id="delete-after-import" value="1" >&nbsp;<label class="label-delete-after-import" for="delete-after-import">Delete files after import</label>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/html" id="field_upload_tmpl">
+    <div class="clearfix element-container upload-element-container" id="field-upload-container-<%=num%>">
+        <label class="required" for="upload-file-<%=num%>">Fichier</label>
+        <input type="hidden" id="MAX_FILE_SIZE_<%=num%>" value="10000000" name="MAX_FILE_SIZE_<%=num%>">
+        <input type="file" id="upload-file-<%=num%>" name="upload_file_<%=num%>">
+        <a href="javascript:;" data-field-num="<%=num%>" id="btn-remove-upload-file-<%=num%>" >
+            <span class="icon-minus-sign"></span>
+        </a>
+    </div>
+</script>

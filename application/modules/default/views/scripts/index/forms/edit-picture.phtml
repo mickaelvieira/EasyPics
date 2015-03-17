@@ -1,0 +1,106 @@
+<div id="view-edit-picture-container">
+
+    <div id="btn-close">
+        <a href="javascript:;">
+            <span class="icon-remove"></span>
+        </a>
+    </div>
+
+    <h2>Edit Picture</h2>
+
+    <div id="elements-container">
+
+        <div id="thumbnail-picture-container"></div>
+
+        <div id="form-edit-picture-container"></div>
+
+        <div class="clearfix"></div>
+
+        <div id="informations-picture-container" class="clearfix"></div>
+
+    </div>
+
+    <script type="text/html" id="thumb_picture_tmpl">
+        <img src="<%=thumb%>" >
+    </script>
+
+    <script type="text/html" id="form_edit_picture_tmpl">
+
+        <form name="form_edit_picture" action="picture/edit/" id="form-edit-picture" method="post" enctype="application/x-www-form-urlencoded">
+
+            <div id="edit-picture-title-container" class="clearfix element-container">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="<%=title%>" >
+            </div>
+            <div id="edit-picture-description-container" class="clearfix element-container">
+                <label for="description">Description</label>
+                <textarea type="text" name="description" id="description" rows="4" cols="20"><%=description%></textarea>
+            </div>
+
+            <div id="container-set-cover-album" class="clearfix">
+                <a href="javascript:;" id="btn-set-cover-album">Define as the album cover</a>
+            </div>
+        </form>
+    </script>
+
+    <script type="text/html" id="info_picture_tmpl">
+
+        <ul>
+            <li>
+                <span>Filename : </span><%=name%>
+            </li>
+            <li>
+                <span>Mimetype : </span><%=mimetype%>
+            </li>
+            <li>
+                <span>Filesize : </span><%=original_file_size%>
+            </li>
+            <li>
+                <span>Dimensions : </span><%=original_width%> x <%=original_height%>
+            </li>
+            <li>
+                <span>Manufacturer : </span><%=manufacturer%>
+            </li>
+            <li>
+                <span>Model : </span><%=model%>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <span>Aperture : </span>F<%=aperture_value%>
+            </li>
+            <li>
+                <span>Focal length : </span><%=focallength%>
+            </li>
+            <li>
+                <span>Exposure time : </span><%=exposuretime%> ms
+            </li>
+            <li>
+                <span>Exposure mode : </span><%=exposuremode_value%>
+            </li>
+            <li>
+                <span>Exposure program : </span><%=exposureprogram_value%>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <span>Flash : </span><%=with_flash%> - <span>Colors : </span><%=is_color%>
+            </li>
+            <li>
+                <span>Light source : </span><%=lightsource_value%>
+            </li>
+            <li>
+                <span>White balance : </span><%=whitebalance_value%>
+            </li>
+            <li>
+                <span>ISO Speed : </span><%=iso_speed_rating%>
+            </li>
+            <li>
+                <span>Date : </span><%=original_date_time%>
+            </li>
+        </ul>
+    </script>
+
+</div>

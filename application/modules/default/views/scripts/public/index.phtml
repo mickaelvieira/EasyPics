@@ -1,0 +1,91 @@
+
+
+<div id="actions">
+    <div id="btn-actions-container">
+
+    <div id="player">
+        <a href="javascript:;" id="btn-player" >
+            <span class="icon-play"></span>
+            <span class="icon-pause"></span>
+        </a>
+    </div>
+    <a href="javascript:;" id="btn-infos">
+        <span class="icon-info-sign"></span>
+    </a>
+
+    <?php if (!is_null($this->user)) { ?>
+    <a href="javascript:;" id="btn-users">
+        <span class="icon-user"></span>
+    </a>
+    <?php } ?>
+
+    </div>
+
+</div>
+
+<section id="gallery-content" >
+
+    <div id="gallery-container" class="clearfix">
+
+        <a id="gallery-prev-link" href="javascript:;">
+            <span class="icon-chevron-left" ></span>
+        </a>
+
+        <a id="gallery-next-link" href="javascript:;">
+            <span class="icon-chevron-right" ></span>
+        </a>
+
+        <div id="gallery-image-container">
+
+            <div id="content-image"></div>
+            <div id="gallery-informations-container">
+                <div id="gallery-informations"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="selector">
+
+        <div id="selector-elements-container">
+
+        <a id="selector-prev-link" href="javascript:;">
+            <span class="icon-chevron-left" ></span>
+        </a>
+
+        <div id="selector-mask">
+
+            <ul id="selector-item-container"></ul>
+        </div>
+
+        <a id="selector-next-link" href="javascript:;">
+            <span class="icon-chevron-right" ></span>
+        </a>
+        </div>
+    </nav>
+
+    <div id="popup">
+
+        <div id="popup-container">
+
+        </div>
+        <div id="popup-arrow">
+
+
+        </div>
+
+    </div>
+
+</section>	
+
+<script type="text/html" id="selector_item_tmpl">
+<li class="">
+    <a href="javascript:;" title="<%=title%>" id="selector-btn-picture-<%=id%>" class="selector-btn-picture">
+
+    </a>
+</li>
+</script>
+
+<script type="text/html" id="informations_tmpl">
+    <b><%=album.name%> - <%=picture.title%> - <%=picture.index%>/<%=album.total_pictures%></b><br>
+    Par <%=album.username%>
+</script>

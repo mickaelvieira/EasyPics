@@ -1,0 +1,35 @@
+<?php
+    echo $this->doctype();
+    echo $this->Locale()->render();
+?>
+<head>
+<?php
+    echo $this->Meta()->render();
+    echo $this->Stylesheet()->render();
+    echo $this->Modernizr()->render();
+?>
+</head>
+<body>
+<?php
+    echo $this->Header("settings/helpers/header.phtml")->render();
+?>
+
+<?php
+    echo $this->layout()->content;
+?>
+
+<?php
+    echo $this->Javascript()->render();
+?>
+
+<script type="text/javascript">
+EasyPics.config.base = '<?php echo $this->baseUrl(''); ?>';
+EasyPics.config.js_version = '<?php echo JS_VERSION ?>';
+EasyPics.config.router = 'Settings';
+EasyPics.config.module = 'api';
+EasyPics.init();
+
+</script>
+
+</body>
+</html>

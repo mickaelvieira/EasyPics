@@ -1,0 +1,26 @@
+<div id="view-form-add-album">
+    <div id="btn-close">
+        <a href="javascript:;">
+            <span class="icon-remove"></span>
+        </a>
+    </div>
+
+    <div>
+
+        <h2>New Album</h2>
+
+        <div id="form-add-album-container">
+        <form id="form-add-album" name="form_add_album" enctype="application/x-www-form-urlencoded" action="<?php echo $this->baseUrl('album/edit/'); ?>" method="post">
+
+            <div id="edit-album-name-container" class="clearfix element-container">
+                <label for="album-name">Name</label>
+                <input type="text" name="album_name" id="album-name">
+            </div>
+
+            <div class="clearfix element-container">
+                <input type="submit" name="add_album_submit_button" id="add-album-submit-button" class="btn" value="Create Album" >
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
